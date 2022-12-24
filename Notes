@@ -1,23 +1,13 @@
 _G.KeyCode = Enum.KeyCode.F
 local BlackTheme = {
-  SettingBackgroundColor = Color3.fromRGB(0,0,0);
-  TextBoxColor = Color3.fromRGB(45,45,45);
-  TextBoxTextColor = Color3.fromRGB(255,255,255);
-  LoadColor = Color3.fromRGB(45,45,45);
-  LoadTextColor = Color3.fromRGB(255,255,255);
-  SaveColor = Color3.fromRGB(45,45,45);
-  SaveTextColor = Color3.fromRGB(255,255,255);
-  ScrollingFrameColor = Color3.fromRGB(0,0,0);
-  TextLabelColor = Color3.fromRGB(45,45,45);
-  TextLabelTextColor = Color3.fromRGB(255,255,255);
-  CloseColor = Color3.fromRGB(45,45,45);
-  CloseTextColor = Color3.fromRGB(255,0,0);
-  BorderColor = BrickColor.new(0,0,0);
+  BackgroundColor3 = Color3.fromRGB(0,0,0);
+  Color = Color3.fromRGB(45,45,45);
+  TextColor = Color3.fromRGB(255,255,255);
 }
 local function Open()
+	
 if _G.Opened == false or _G.Opened == nil then
     _G.Opened = true
-    if _G.Theme ~= "BlackTheme" then
 local Notes = Instance.new("ScreenGui")
 local s = Instance.new("Frame")
 local TextBox = Instance.new("TextBox")
@@ -251,254 +241,24 @@ end)
         ss.Visible = not ss.Visible
         end
         end)
-        end)
-    elseif _G.Theme == "BlackTheme" then
-        local Notes = Instance.new("ScreenGui")
-local s = Instance.new("Frame")
-local TextBox = Instance.new("TextBox")
-local L = Instance.new("TextButton")
-local S = Instance.new("TextButton")
-local C = Instance.new("TextButton")
-local ss = Instance.new("Frame")
-local ScrollingFrame = Instance.new("ScrollingFrame")
-local TextBox_2 = Instance.new("TextBox")
-local TextLabel = Instance.new("TextLabel")
-local TextButton = Instance.new("TextButton")
-local WelcomeText = "--tiyixifl29 was here"
---Properties:
-
-Notes.Name = "Notes"
-Notes.Parent = game.CoreGui
-Notes.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
--- Settings MENU
-s.Name = "s"
-s.Parent = Notes
-s.BackgroundColor3 = BlackTheme.SettingBackgroundColor
-s.Position = UDim2.new(0.0703592822, 0, 0.361149102, 0)
-s.Size = UDim2.new(0, 200, 0, 230)
-
-TextBox.Parent = s
-TextBox.BackgroundColor3 = BlackTheme.TextBoxColor
-TextBox.Position = UDim2.new(0, 0, 0.17014493, 0)
-TextBox.Size = UDim2.new(0, 200, 0, 50)
-TextBox.ClearTextOnFocus = false
-TextBox.Font = Enum.Font.SourceSans
-TextBox.Text = "insert name"
-TextBox.TextColor3 = BlackTheme.TextBoxTextColor
-TextBox.TextSize = 14.000
-
-L.Name = "L"
-L.Parent = s
-L.BackgroundColor3 = BlackTheme.LoadColor
-L.Position = UDim2.new(0, 0, 0.423817366, 0)
-L.Size = UDim2.new(0, 200, 0, 50)
-L.Font = Enum.Font.SourceSans
-L.Text = "load"
-L.TextColor3 = BlackTheme.LoadTextColor
-L.TextSize = 14.000
-
-S.Name = "S"
-S.Parent = s
-S.BackgroundColor3 = BlackTheme.SaveColor
-S.Position = UDim2.new(0, 0, 0.725047827, 0)
-S.Size = UDim2.new(0, 200, 0, 50)
-S.Font = Enum.Font.SourceSans
-S.Text = "save"
-S.TextColor3 = BlackTheme.SaveTextColor
-S.TextSize = 14.000
-
-C.Name = "C"
-C.Parent = s
-C.BackgroundColor3 = BlackTheme.CloseColor
-C.Size = UDim2.new(0, 51, 0, 33)
-C.Font = Enum.Font.SourceSans
-C.Text = "Close"
-C.TextColor3 = BlackTheme.CloseTextColor
-C.TextSize = 14.000
-
-ss.Name = "ss"
-ss.Parent = Notes
-ss.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ss.Position = UDim2.new(0.315868258, 0, 0.2257182, 0)
-ss.Size = UDim2.new(0, 335, 0, 392)
-
-ScrollingFrame.Parent = ss
-ScrollingFrame.Active = true
-ScrollingFrame.BackgroundColor3 = BlackTheme.ScrollingFrameColor
-ScrollingFrame.Position = UDim2.new(0, 0, 0.153061226, 0)
-ScrollingFrame.Size = UDim2.new(0, 335, 0, 332)
-
-TextBox_2.Parent = ScrollingFrame
-TextBox_2.BackgroundColor3 = BlackTheme.TextBoxColor
-TextBox_2.BorderSizePixel = 0
-TextBox_2.Size = UDim2.new(1, 0, 1, 0)
-TextBox_2.ClearTextOnFocus = false
-TextBox_2.Font = Enum.Font.Arial
-TextBox_2.Text = WelcomeText
-TextBox_2.TextColor3 = BlackTheme.TextBoxTextColor
-TextBox_2.TextSize = 28.000
-TextBox_2.TextWrapped = true
-TextBox_2.TextXAlignment = Enum.TextXAlignment.Left
-TextBox_2.TextYAlignment = Enum.TextYAlignment.Top
-
-TextLabel.Parent = ss
-TextLabel.BackgroundColor3 = BlackTheme.TextLabelColor
-TextLabel.Size = UDim2.new(0, 335, 0, 60)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "name"
-TextLabel.TextColor3 = BlackTheme.TextLabelTextColor
-TextLabel.TextSize = 14.000
-TextLabel.TextScaled = true
-
-TextButton.Parent = ss
-TextButton.BackgroundColor3 = BlackTheme.TextLabelColor
-TextButton.Position = UDim2.new(-0.146268651, 0, 0, 0)
-TextButton.Size = UDim2.new(0, 49, 0, 50)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "open"
-TextButton.TextColor3 = BlackTheme.TextLabelTextColor
-TextButton.TextSize = 14.000
-local tname
-local tb = TextBox
-local tb2 = TextBox_2
-local name = TextLabel
-local c = C
-local function p(t)
-TextLabel.Text = t
-end
-S.MouseButton1Click:Connect(function()
-	local succ,res = pcall(function()
-	p("[Saving...]")
-	writefile(tb.Text..".txt", TextBox_2.Text)
-	task.wait(1)
-	p("[Done]")
-	task.wait(3)
-	p(tname)
-
 	end)
-
-end)
-L.MouseButton1Click:Connect(function()
-	if tb.Text == nil then error("ENTER THE FILE NAME") return end 
-	local suc, res = pcall(function()
-	p("[Checking...]")
-	task.wait(1)
-	if isfile(tb.Text..".txt") then
-	p("["..tb.Text..".txt]")
-	task.wait(1)
-	p("[Opening File...]")
-	task.wait(1)
-	tb2.Text = readfile(tb.Text..".txt")
-	name.Text = tb.Text..".txt"
-	tname = tb.Text..".txt"
-	else
-	error("[ERROR] This is not a text file or it isn't readable")
-	end
-	end)
-end)
-c.MouseButton1Click:Connect(function()
-	s.Visible = false
-end)
-
-TextButton.MouseButton1Click:Connect(function()
-	s.Visible = true
-end)
-
- local UserInputService = game:GetService("UserInputService")
-
-        local gui = s
-
-        local dragging
-        local dragInput
-        local dragStart
-        local startPos
-
-        local function update(input)
-        	local delta = input.Position - dragStart
-        	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-        end
-
-        gui.InputBegan:Connect(function(input)
-        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        		dragging = true
-        		dragStart = input.Position
-        		startPos = gui.Position
-        		
-        		input.Changed:Connect(function()
-        			if input.UserInputState == Enum.UserInputState.End then
-        				dragging = false
-        			end
-        		end)
-        	end
-        end)
-
-        gui.InputChanged:Connect(function(input)
-        	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-        		dragInput = input
-        	end
-        end)
-
-        UserInputService.InputChanged:Connect(function(input)
-        	if input == dragInput and dragging then
-        		update(input)
-        	end
-        end)
-
-        local guis = ss
-        local draggings
-        local dragInputs
-        local dragStarts
-        local startPoss
-        local function updates(input)
-        	local delta = input.Position - dragStarts
-        	guis.Position = UDim2.new(startPoss.X.Scale, startPoss.X.Offset + delta.X, startPoss.Y.Scale, startPoss.Y.Offset + delta.Y)
-        end
-
-        guis.InputBegan:Connect(function(input)
-        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        		draggings = true
-        		dragStarts = input.Position
-        		startPoss = guis.Position
-        		
-        		input.Changed:Connect(function()
-        			if input.UserInputState == Enum.UserInputState.End then
-        				draggings = false
-        			end
-        		end)
-        	end
-        end)
-
-        guis.InputChanged:Connect(function(input)
-        	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-        		dragInputs = input
-        	end
-        end)
-
-        UserInputService.InputChanged:Connect(function(input)
-        	if input == dragInputs and draggings then
-        		updates(input)
-        	end
-        end)
-
-        UserInputService.InputBegan:Connect(function(input)
-        local s, r = pcall(function()
-        if input.KeyCode == _G.KeyCode then
-        ss.Visible = not ss.Visible
-        end
-        end)
-        end)
-    end
 end
 end
 if _G.Opened == true then
-    game.CoreGui.Notes:Destroy()
+    if game.CoreGui:FindFirstChild("Notes") then
+    for i, v in pairs(game.CoreGui:GetChildren()) do
+    if v.Name == "Notes" then
+    v:Destroy()
+    end
+    end
+    end
     _G.Opened = false
     Open()
     for i, v in pairs(game.CoreGui.Notes:GetDescendants()) do
-    print(v.Name)
     v.BorderSizePixel = 2
-    if _G.Theme == "BlackTheme" then
-    v.BorderColor = BlackTheme.BorderColor
+    print("BLACK THEME IS CURRENTLY HAVING PROBLEM PLEASE DONT USE IT")
     end
-    end
+else
+    _G.Opened = true
+	Open()
     end

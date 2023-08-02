@@ -1,7 +1,7 @@
 local notepad = Instance.new("ScreenGui")
 notepad.Name = "notepad"
 notepad.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
+notepad.Parent = game.CoreGui
 local notemenu = Instance.new("Frame")
 notemenu.Name = "notemenu"
 notemenu.BackgroundColor3 = Color3.fromRGB(0, 0, 0)

@@ -1,0 +1,429 @@
+local notepad = Instance.new("ScreenGui")
+notepad.Name = "notepad"
+notepad.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+local notemenu = Instance.new("Frame")
+notemenu.Name = "notemenu"
+notemenu.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+notemenu.BorderColor3 = Color3.fromRGB(0, 0, 0)
+notemenu.BorderSizePixel = 0
+notemenu.Position = UDim2.fromScale(0.0971, 0.148)
+notemenu.Size = UDim2.fromOffset(300, 37)
+
+local settingsframe = Instance.new("Frame")
+settingsframe.Name = "settingsframe"
+settingsframe.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+settingsframe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+settingsframe.BorderSizePixel = 0
+settingsframe.Position = UDim2.fromScale(1.07, 0)
+settingsframe.Size = UDim2.fromOffset(259, 437)
+settingsframe.Visible = false
+
+local close = Instance.new("TextButton")
+close.Name = "close"
+close.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+close.Text = "close"
+close.TextColor3 = Color3.fromRGB(0, 0, 0)
+close.TextSize = 14
+close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+close.BorderSizePixel = 0
+close.Position = UDim2.fromScale(0.707, 0.023)
+close.Size = UDim2.fromOffset(60, 26)
+
+close.Parent = settingsframe
+
+local width = Instance.new("TextBox")
+width.Name = "width"
+width.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+width.PlaceholderText = "width"
+width.Text = "width"
+width.TextColor3 = Color3.fromRGB(0, 0, 0)
+width.TextScaled = true
+width.TextSize = 14
+width.TextWrapped = true
+width.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+width.BorderColor3 = Color3.fromRGB(0, 0, 0)
+width.BorderSizePixel = 0
+width.Position = UDim2.fromScale(0.0541, 0.105)
+width.Size = UDim2.fromOffset(105, 30)
+width.Parent = settingsframe
+
+local long = Instance.new("TextBox")
+long.Name = "long"
+long.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+long.PlaceholderText = "long"
+long.Text = "long"
+long.TextColor3 = Color3.fromRGB(0, 0, 0)
+long.TextScaled = true
+long.TextSize = 14
+long.TextWrapped = true
+long.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+long.BorderColor3 = Color3.fromRGB(0, 0, 0)
+long.BorderSizePixel = 0
+long.Position = UDim2.fromScale(0.533, 0.105)
+long.Size = UDim2.fromOffset(105, 30)
+long.Parent = settingsframe
+
+local changesize = Instance.new("TextButton")
+changesize.Name = "changesize"
+changesize.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+changesize.Text = "change size"
+changesize.TextColor3 = Color3.fromRGB(0, 0, 0)
+changesize.TextSize = 14
+changesize.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+changesize.BorderColor3 = Color3.fromRGB(0, 0, 0)
+changesize.BorderSizePixel = 0
+changesize.Position = UDim2.fromScale(0.0541, 0.206)
+changesize.Size = UDim2.fromOffset(229, 24)
+
+changesize.Parent = settingsframe
+
+local notenamebox = Instance.new("TextBox")
+notenamebox.Name = "notenamebox"
+notenamebox.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+notenamebox.PlaceholderText = "note name"
+notenamebox.Text = ""
+notenamebox.TextColor3 = Color3.fromRGB(0, 0, 0)
+notenamebox.TextSize = 28
+notenamebox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+notenamebox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+notenamebox.BorderSizePixel = 0
+notenamebox.Position = UDim2.fromScale(0.0541, 0.286)
+notenamebox.Size = UDim2.fromOffset(229, 29)
+notenamebox.Parent = settingsframe
+
+local notename = Instance.new("TextLabel")
+notename.Name = "notename"
+notename.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+notename.Text = "extremely bad notepad"
+notename.TextColor3 = Color3.fromRGB(255, 255, 255)
+notename.TextSize = 14
+notename.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+notename.BackgroundTransparency = 1
+notename.BorderColor3 = Color3.fromRGB(0, 0, 0)
+notename.BorderSizePixel = 0
+notename.Position = UDim2.fromScale(0.0935, 0.00971)
+notename.Size = UDim2.fromOffset(144, 37)
+notename.Parent = settingsframe
+
+local save = Instance.new("TextButton")
+save.Name = "save"
+save.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+save.Text = "save"
+save.TextColor3 = Color3.fromRGB(0, 0, 0)
+save.TextSize = 14
+save.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+save.BorderColor3 = Color3.fromRGB(0, 0, 0)
+save.BorderSizePixel = 0
+save.Position = UDim2.fromScale(0.0541, 0.38)
+save.Size = UDim2.fromOffset(105, 24)
+
+save.Parent = settingsframe
+
+local enter = Instance.new("TextButton")
+enter.Name = "enter"
+enter.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+enter.Text = "enter"
+enter.TextColor3 = Color3.fromRGB(0, 0, 0)
+enter.TextSize = 14
+enter.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+enter.BorderColor3 = Color3.fromRGB(0, 0, 0)
+enter.BorderSizePixel = 0
+enter.Position = UDim2.fromScale(0.533, 0.38)
+enter.Size = UDim2.fromOffset(105, 24)
+
+enter.Parent = settingsframe
+
+local notebackgroundcolor = Instance.new("TextBox")
+notebackgroundcolor.Name = "notebackgroundcolor"
+notebackgroundcolor.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+notebackgroundcolor.PlaceholderText = "notebackgroundcolor3 ( default is 1,1,1 )"
+notebackgroundcolor.Text = ""
+notebackgroundcolor.TextColor3 = Color3.fromRGB(0, 0, 0)
+notebackgroundcolor.TextScaled = true
+notebackgroundcolor.TextSize = 28
+notebackgroundcolor.TextWrapped = true
+notebackgroundcolor.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+notebackgroundcolor.BorderColor3 = Color3.fromRGB(0, 0, 0)
+notebackgroundcolor.BorderSizePixel = 0
+notebackgroundcolor.Position = UDim2.fromScale(0.0541, 0.467)
+notebackgroundcolor.Size = UDim2.fromOffset(229, 29)
+notebackgroundcolor.Parent = settingsframe
+
+local changebackground = Instance.new("TextButton")
+changebackground.Name = "changebackground"
+changebackground.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+changebackground.Text = "changebackground"
+changebackground.TextColor3 = Color3.fromRGB(0, 0, 0)
+changebackground.TextSize = 14
+changebackground.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+changebackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
+changebackground.BorderSizePixel = 0
+changebackground.Position = UDim2.fromScale(0.0541, 0.563)
+changebackground.Size = UDim2.fromOffset(229, 24)
+
+changebackground.Parent = settingsframe
+
+local text = Instance.new("TextLabel")
+text.Name = "text"
+text.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+text.Text = "output:"
+text.TextColor3 = Color3.fromRGB(255, 255, 255)
+text.TextSize = 14
+text.TextXAlignment = Enum.TextXAlignment.Left
+text.BackgroundColor3 = Color3.fromRGB(161, 161, 161)
+text.BackgroundTransparency = 1
+text.BorderColor3 = Color3.fromRGB(0, 0, 0)
+text.BorderSizePixel = 0
+text.Position = UDim2.fromScale(0.0541, 0.693)
+text.Size = UDim2.fromOffset(229, 12)
+text.Parent = settingsframe
+
+local output = Instance.new("TextLabel")
+output.Name = "output"
+output.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+output.Text = "nil"
+output.TextColor3 = Color3.fromRGB(255, 255, 255)
+output.TextSize = 28
+output.TextXAlignment = Enum.TextXAlignment.Left
+output.TextYAlignment = Enum.TextYAlignment.Top
+output.BackgroundColor3 = Color3.fromRGB(161, 161, 161)
+output.BackgroundTransparency = 1
+output.BorderColor3 = Color3.fromRGB(0, 0, 0)
+output.BorderSizePixel = 0
+output.Position = UDim2.fromScale(0.0541, 0.739)
+output.Size = UDim2.fromOffset(229, 94)
+output.Parent = settingsframe
+
+settingsframe.Parent = notemenu
+
+local notebox = Instance.new("TextBox")
+notebox.Name = "notebox"
+notebox.ClearTextOnFocus = false
+notebox.CursorPosition = -1
+notebox.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+notebox.PlaceholderText = "extremely badnotepad"
+notebox.RichText = true
+notebox.Text = ""
+notebox.TextColor3 = Color3.fromRGB(0, 0, 0)
+notebox.TextSize = 28
+notebox.TextWrapped = true
+notebox.TextXAlignment = Enum.TextXAlignment.Left
+notebox.TextYAlignment = Enum.TextYAlignment.Top
+notebox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+notebox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+notebox.BorderSizePixel = 0
+notebox.Position = UDim2.fromScale(0, 1)
+notebox.Size = UDim2.fromOffset(300, 400)
+notebox.Parent = notemenu
+
+local closer = Instance.new("TextButton")
+closer.Name = "close"
+closer.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+closer.Text = "close"
+closer.TextColor3 = Color3.fromRGB(0, 0, 0)
+closer.TextSize = 14
+closer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+closer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+closer.BorderSizePixel = 0
+closer.Position = UDim2.fromScale(0.753, 0.135)
+closer.Size = UDim2.fromOffset(60, 26)
+
+closer.Parent = notemenu
+
+local settings = Instance.new("TextButton")
+settings.Name = "settings"
+settings.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+settings.Text = "settings"
+settings.TextColor3 = Color3.fromRGB(0, 0, 0)
+settings.TextSize = 14
+settings.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+settings.BorderColor3 = Color3.fromRGB(0, 0, 0)
+settings.BorderSizePixel = 0
+settings.Position = UDim2.fromScale(0.53, 0.135)
+settings.Size = UDim2.fromOffset(60, 26)
+settings.Parent = notemenu
+
+local notename1 = Instance.new("TextLabel")
+notename1.Name = "notename"
+notename1.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+notename1.Text = "extremely bad notepad"
+notename1.TextColor3 = Color3.fromRGB(255, 255, 255)
+notename1.TextSize = 14
+notename1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+notename1.BackgroundTransparency = 1
+notename1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+notename1.BorderSizePixel = 0
+notename1.Size = UDim2.fromOffset(144, 37)
+notename1.Parent = notemenu
+
+notemenu.Parent = notepad
+
+local open = Instance.new("TextButton")
+open.Name = "open"
+open.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+open.Text = "open"
+open.TextColor3 = Color3.fromRGB(0, 0, 0)
+open.TextScaled = true
+open.TextSize = 14
+open.TextWrapped = true
+open.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+open.BorderColor3 = Color3.fromRGB(0, 0, 0)
+open.BorderSizePixel = 0
+open.Position = UDim2.fromScale(0, 0.91)
+open.Size = UDim2.fromOffset(200, 19)
+open.Visible = false
+
+open.Parent = notepad
+-- changebackground
+changebackground.MouseButton1Click:Connect(function()
+	if (notebackgroundcolor.Text) == nil then notebox.BackgroundColor3 = Color3.new(1,1,1) output.Text = "changed the backgorund to default white" return end
+	local success, result = pcall(function()
+		notebox.BackgroundColor3 = Color3.new(notebackgroundcolor.Text)
+	end)
+	if not success then
+		output.Text = "Something went wrong"
+	end
+end)
+-- changesize
+changesize.MouseButton1Click:Connect(function()
+	if (width.Text)  == nil or (long.Text) == nil then output.Text = "failed, you forgot to either include width size or long size" return end
+	notebox.Size = UDim2.new(0, width.Text, 0, long.Text) --withoffscale, width , longoffscale, long
+	output.Text = "successfully change size"
+end)
+--close
+close.MouseButton1Click:Connect(function()
+    settingsframe.Visible = false
+end)
+--closer
+closer.MouseButton1Click:Connect(function()
+    notemenu.Visible = false
+    open.Visible = true
+end)
+--open
+open.MouseButton1Click:Connect(function()
+    open.Visible = false
+    notemenu.Visible = true
+end)
+--load
+enter.MouseButton1Click:Connect(function()
+    if notenamebox.Text == nil then output.Text = "failed to load" return end
+    notebox.Text = readfile(notenamebox.Text .. ".txt")
+    output.Text = "load success"
+end)
+--save
+save.MouseButton1Click:Connect(function()
+    if notenamebox.Text == nil then output.Text = "failed to save" return end
+    writefile(notenamebox.Text..".txt", notebox.Text)
+end)
+--settings
+settings.MouseButton1Click:Connect(function()
+    settingsframe.Visible = true 
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--script by tiyixif29josda please do not reupload without credit gr

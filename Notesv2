@@ -322,9 +322,98 @@ settings.MouseButton1Click:Connect(function()
     settingsframe.Visible = true 
 end)
 
+local UserInputService = game:GetService("UserInputService")
 
+        local gui = settingsframe
+        local guit = notemenu
+        local guith = open
+        local dragging
+        local dragInput
+        local dragStart
+        local startPos
 
+        local function update(input,guis)
+        	local delta = input.Position - dragStart
+        	guis.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        end
 
+        gui.InputBegan:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        		dragging = true
+        		dragStart = input.Position
+        		startPos = gui.Position
+        		
+        		input.Changed:Connect(function()
+        			if input.UserInputState == Enum.UserInputState.End then
+        				dragging = false
+        			end
+        		end)
+        	end
+        end)
+
+        gui.InputChanged:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        		dragInput = input
+        	end
+        end)
+
+        UserInputService.InputChanged:Connect(function(input)
+        	if input == dragInput and dragging then
+        		update(input, gui)
+        	end
+        end)
+
+        guit.InputBegan:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        		dragging = true
+        		dragStart = input.Position
+        		startPos = guit.Position
+        		
+        		input.Changed:Connect(function()
+        			if input.UserInputState == Enum.UserInputState.End then
+        				dragging = false
+        			end
+        		end)
+        	end
+        end)
+
+        guit.InputChanged:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        		dragInput = input
+        	end
+        end)
+
+        UserInputService.InputChanged:Connect(function(input)
+        	if input == dragInput and dragging then
+        		update(input, guit)
+        	end
+        end)
+
+        guith.InputBegan:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        		dragging = true
+        		dragStart = input.Position
+        		startPos = guith.Position
+        		
+        		input.Changed:Connect(function()
+        			if input.UserInputState == Enum.UserInputState.End then
+        				dragging = false
+        			end
+        		end)
+        	end
+        end)
+
+        guith.InputChanged:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        		dragInput = input
+        	end
+        end)
+
+        UserInputService.InputChanged:Connect(function(input)
+        	if input == dragInput and dragging then
+        		update(input, guith)
+        	end
+        end)
 
 
 
